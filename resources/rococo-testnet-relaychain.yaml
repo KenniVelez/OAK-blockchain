@@ -1,6 +1,6 @@
 networkSpec:
-  displayName: rococo-testnet-relaychain
-  name: rococo-testnet
+  displayName: rococo-testnet-jz1-relaychain
+  name: rococo-testnet-jz1
   protocol: substrate
   imageRepository: parity/polkadot
   imageVersion: v0.9.12
@@ -17,13 +17,13 @@ networkSpec:
         - key: "--chain"
           file: rococo-testnet.json
 validator:
-  count: 3
+  count: 6
   sudoArgs: #sudo args is to reduce the setting of sudo users for each node. For example, there will be 3 nodes running, the first node will be assgin --alice, the second node will be assgin --bob, and the third will be assgin --charlie. 
     - --alice
     - --bob
     - --charlie
   node:
-    nodeName: rococo-testnet-validator
+    nodeName: rococo-testnet-jz1-validator
     nodeType: validator
     clusterKey: jm
     nodeSpec:
@@ -38,7 +38,7 @@ validator:
 bootNode:
   count: 1
   node:
-    nodeName: rococo-testnet-bootnode
+    nodeName: rococo-testnet-jz1-bootnode
     nodeType: full
     clusterKey: jm
     nodeSpec:
